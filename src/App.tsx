@@ -49,7 +49,7 @@ function App() {
       <h1>Prueba técnica Jr</h1>
     </header>
     <aside>
-      <h4>Añadir y eliminar elementos de la lista</h4>
+      <h4>Añadir elementos a la lista</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Elemento a introducir:
@@ -64,7 +64,7 @@ function App() {
       </form>
     </aside>
     <section>
-      <h4>Lista de elementos</h4>
+      <h4>Lista de elementos:</h4>
       <ul>
        {
         items.map((item)  => {
