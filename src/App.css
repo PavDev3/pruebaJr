@@ -3,4 +3,44 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  grid-column: 1 / span 2;
+  margin: 20px 0;
+}
+
+aside {
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 800px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
 }
