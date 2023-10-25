@@ -42,6 +42,10 @@ function App() {
     setItems(newItems)
   }
 
+  const handleReset = () => {
+    setItems([])
+  }
+
 
   return (
   <main>
@@ -61,6 +65,7 @@ function App() {
            />
         </label>
         <button type='submit'>Añadir</button>
+        
       </form>
     </aside>
     <section>
@@ -77,6 +82,7 @@ function App() {
         )
       }
       </ul>
+      <button onClick={handleReset}>Eliminar todos</button>
     </section>
   </main>
  )
