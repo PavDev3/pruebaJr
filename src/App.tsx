@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Item {
   id: `${string}-${string}-${string}-${string}-${string}`,
@@ -22,6 +22,7 @@ const INITIAL_ITEMS: Item[] = [
 function App() {
 
   const [items, setItems] = useState(INITIAL_ITEMS)
+  const [isButtonVisible, setIsButtonVisible] = useState(true)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -46,6 +47,10 @@ function App() {
     setItems([])
   }
 
+  useEffect(() => {
+    setIsButtonVisible(items.length > 0)
+  }, [items])
+
 
   return (
   <main>
@@ -64,25 +69,29 @@ function App() {
           placeholder='Escribe aquí'
            />
         </label>
-        <button type='submit'>Añadir</button>
-        
+        <button type='submit'>Añadir</button> 
       </form>
     </aside>
     <section>
       <h4>Lista de elementos:</h4>
-      <ul>
+      {
+        items.length === 0 ? <p>No hay elementos</p> :
+
+        <ul>
        {
         items.map((item)  => {
-            return (
+          return (
             <li key={item.id}>
               <span>{item.text}</span>
               <button onClick={() => handleRemove(item.id)}>Eliminar</button>     
             </li>
           )}
-        )
+          )
       }
       </ul>
-      <button onClick={handleReset}>Eliminar todos</button>
+        }
+       {isButtonVisible && <button onClick={handleReset}>Eliminar todos</button>}
+       
     </section>
   </main>
  )
