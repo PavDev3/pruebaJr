@@ -9,22 +9,22 @@ interface Item {
   text: string,
 }
 // 2. Añadir elementos a la lista de ejemplos
-const INITIAL_ITEMS: Item[] = [
-  {
-    id: crypto.randomUUID(),
-    timestamp: Date.now(),
-    text: 'Elemento 1',
-  },
-  {
-    id: crypto.randomUUID(),
-    timestamp: Date.now(),
-    text: 'Elemento 2',
-  }
-]
+// const INITIAL_ITEMS: Item[] = [
+//   {
+//     id: crypto.randomUUID(),
+//     timestamp: Date.now(),
+//     text: 'Elemento 1',
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     timestamp: Date.now(),
+//     text: 'Elemento 2',
+//   }
+// ]
 function App() {
 
   // 3. Creamos un estado para la lista de elementos
-  const [items, setItems] = useState(INITIAL_ITEMS)
+  const [items, setItems] = useState<Item[]>([])
   // Creamos un estado para el botón de eliminar todos para que no se muestre si no hay elementos
   const [isButtonVisible, setIsButtonVisible] = useState(true)
 
@@ -71,7 +71,7 @@ function App() {
     </header>
     <aside>
       <h4>Añadir elementos a la lista</h4>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-label='Añadir elementos a la lista'>
         <label>
           Elemento a introducir:
           <input 
