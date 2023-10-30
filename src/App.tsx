@@ -1,6 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { Item } from './components/Item'
+import { MagicMotion } from "react-magic-motion";
 
 
 // 1. Crear una lista de elementos
@@ -54,6 +55,7 @@ function App() {
   // También tenemos una section donde mostramos la lista de elementos siempre que haya alguno, si no, mostramos un mensaje
   // Si la lista de elementos esta vacía, no mostramos el botón de eliminar todos
   return (
+    <MagicMotion>
   <main>
     <header>
       <h1>Prueba técnica Jr</h1>
@@ -93,6 +95,7 @@ function App() {
        
     </section>
   </main>
+  </MagicMotion>
  )
 }
 
