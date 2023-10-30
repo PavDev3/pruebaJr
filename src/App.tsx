@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
+import { Item } from './components/Item'
 
 
 // 1. Crear una lista de elementos
@@ -8,19 +9,7 @@ interface Item {
   timestamp: number,
   text: string,
 }
-// 2. Añadir elementos a la lista de ejemplos
-// const INITIAL_ITEMS: Item[] = [
-//   {
-//     id: crypto.randomUUID(),
-//     timestamp: Date.now(),
-//     text: 'Elemento 1',
-//   },
-//   {
-//     id: crypto.randomUUID(),
-//     timestamp: Date.now(),
-//     text: 'Elemento 2',
-//   }
-// ]
+
 function App() {
 
   // 3. Creamos un estado para la lista de elementos
@@ -92,13 +81,11 @@ function App() {
         <ul>
        {
         items.map((item)  => {
-          return (
-            <li key={item.id}>
-              <span>{item.text}</span>
-              <button onClick={() => handleRemove(item.id)}>Eliminar</button>     
-            </li>
-          )}
-          )
+          return <Item {...item}
+          key={item.id}
+          handleRemove={() => handleRemove(item.id)}
+            />
+          })
       }
       </ul>
         }
