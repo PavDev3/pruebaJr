@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { Item } from "../components/itemsData"
-
+import { type Item } from "../App"
 
 
 export const useItems = () => {
@@ -32,8 +31,3 @@ export const useItems = () => {
       removeItem,
     }
 }
-
-
-
-
-

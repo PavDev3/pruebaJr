@@ -4,7 +4,7 @@ import { Item } from './components/Item'
 
 
 // 1. Crear una lista de elementos
-interface Item {
+export interface Item {
   id: `${string}-${string}-${string}-${string}-${string}`,
   timestamp: number,
   text: string,
